@@ -62,6 +62,19 @@ const saisirBooleen = (message?: string): boolean => {
   return val;
 };
 
-const helpers = { saisirBooleen, saisirNombre, saisirTexte, afficher };
+/**
+ * Renvoie une valeur aléatoire entre la valeur minimum
+ *  et la valeur maximum passées en paramètres.
+ * Si aucun paramètre n'est passée, la valeur générée sera entre 1 et 10
+ * @param {number} minimum le minimum voulu
+ * @param {number} maximum le maximum voulu
+ * @returns
+ */
+const valeurAleatoire = (minimum = 1, maximum = 10) =>
+  Math.floor(
+    Math.min(minimum, maximum) +
+      Math.random() *
+        (Math.max(minimum, maximum) - Math.min(minimum, maximum) + 1)
+  );
 
-export { helpers as ESICADHelpers };
+export { saisirBooleen, saisirNombre, saisirTexte, afficher, valeurAleatoire };
