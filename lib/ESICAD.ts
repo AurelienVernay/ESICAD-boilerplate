@@ -33,5 +33,6 @@ function saisirBooleen(message?: string): boolean {
   }
   return val;
 }
+const helpers = { saisirBooleen, saisirNombre, saisirTexte, afficher };
 
-export { saisirBooleen, saisirNombre, saisirTexte, afficher };
+export { helpers as ESICADHelpers };
