@@ -25,8 +25,8 @@ const saisirTexte = (message: string = ""): string => {
  *  comme un nombre, la valeur `null` sera retournée
  * @param {string} message un message que l'on veut afficher avant de saisir (optionnel)
  */
-const saisirNombre = (message?: string) => {
-  const output = Number(prompt(message + ""));
+const saisirNombre = (message = "") => {
+  const output = Number(prompt(message));
   return (isNaN(output) ? null : output) as number;
 };
 
@@ -36,8 +36,8 @@ const saisirNombre = (message?: string) => {
  * `vrai`,`VRAI`,`V`,`v`,`oui`,`OUI`,`o`,`O`,`true`,`TRUE`, et faux n'importe quelle autre valeur.
  * @param {string} message un message que l'on veut afficher avant de saisir (optionnel)
  */
-const saisirBooleen = (message?: string): boolean => {
-  const output = prompt(message + "");
+const saisirBooleen = (message = ""): boolean => {
+  const output = prompt(message);
   let val = false;
   switch (output) {
     case "vrai":
