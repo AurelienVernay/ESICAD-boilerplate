@@ -25,9 +25,9 @@ const saisirTexte = (message: string = ""): string => {
  *  comme un nombre, la valeur `null` sera retournée
  * @param {string} message un message que l'on veut afficher avant de saisir (optionnel)
  */
-const saisirNombre = (message?: string): number | null => {
+const saisirNombre = (message?: string) => {
   const output = Number(prompt(message + ""));
-  return isNaN(output) ? null : output;
+  return (isNaN(output) ? null : output) as number;
 };
 
 /**
