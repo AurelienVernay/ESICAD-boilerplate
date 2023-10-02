@@ -15,8 +15,8 @@ const afficher = (texte: string) => console.log(texte);
  * comme une chaine de caractères.
  * @param {string} message un message que l'on veut afficher avant de saisir (optionnel)
  */
-const saisirTexte = (message?: string): string => {
-  return prompt(message + "");
+const saisirTexte = (message: string = ""): string => {
+  return prompt(message);
 };
 
 /**
