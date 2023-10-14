@@ -1,7 +1,12 @@
 import * as ESICADHelpers from "./lib/ESICAD";
-/**
- * Ce fichier est le point d'entrée de votre code.
- * Il s'exécute lorsque vous lancer la commande `npm start`
- */
 
-ESICADHelpers.afficher("Hello World !");
+let maVariable;
+ESICADHelpers.afficher("Bonjour, je suis un programme à débugger !");
+maVariable = ESICADHelpers.saisirNombre("Saisir un nombre : ");
+if (maVariable > 100) {
+  ESICADHelpers.afficher("C'est plus grand que 100");
+} else if (maVariable < 100) {
+  ESICADHelpers.afficher("C'est moins grand que 100");
+} else {
+  ESICADHelpers.afficher("C'est 100");
+}
