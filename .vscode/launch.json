@@ -11,7 +11,9 @@
       "program": "${workspaceFolder}/index.ts",
       "preLaunchTask": "npm: build",
       "outFiles": ["${workspaceFolder}/dist/**/*.js"],
-      "console": "integratedTerminal"
+      "console": "integratedTerminal","skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ]
 }
