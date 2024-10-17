@@ -8,7 +8,7 @@
     "preinstall": "echo La commande `npm install` a été exécutée, installation est en cours...",
     "clean": "rimraf dist",
     "build": "npm run clean && tsc && tsc-alias",
-    "start": "npm run build && chcp 65001 && node ./dist/main.js --with-intl=system-icu"
+    "start": "npm run build && node ./dist/main.js --with-intl=system-icu"
   },
   "author": "Aurélien VERNAY",
   "license": "ISC",
