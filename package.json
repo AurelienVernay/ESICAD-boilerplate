@@ -1,0 +1,28 @@
+{
+  "name": "tp1",
+  "version": "1.0.0",
+  "description": "BTS SIO Algorithmie TP1 projet",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "echo Installation des dépendances du projet exécutée avec succès !",
+    "preinstall": "echo La commande `npm install` a été exécutée, installation est en cours...",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc && tsc-alias",
+    "start": "npm run build && chcp 65001 && node ./dist/main.js --with-intl=system-icu"
+  },
+  "author": "Aurélien VERNAY",
+  "license": "ISC",
+  "dependencies": {
+    "iconv-lite": "^0.6.3",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/iconv-lite": "^0.0.1",
+    "@types/readline-sync": "^1.4.8",
+    "nodemon": "3.0.1",
+    "rimraf": "6.0.1",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "1.8.10",
+    "typescript": "5.2.2"
+  }
+}
