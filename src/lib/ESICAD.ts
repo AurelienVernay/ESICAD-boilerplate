@@ -1,5 +1,11 @@
-import fs from 'fs';
+import fs from "fs";
 import readlineSync from "readline-sync";
+import promptSync from "prompt-sync";
+
+const prompt = promptSync({
+  sigint: true,
+  eot: true,
+});
 /**
  * Affiche un texte à l'écran
  * @param {string} texte le texte que l'on veut afficher
@@ -12,10 +18,11 @@ const afficher = (texte: string) => console.log(texte);
  * @param {string} message un message que l'on veut afficher avant de saisir (optionnel)
  */
 const saisirTexte = (message: string = ""): string => {
-  let buffer = Buffer.alloc(1024);
-  let bytesRead = fs.readSync(0, buffer, 0, buffer.length, 0);
-  let input = buffer.toString('latin1', 0, bytesRead).trim();
-  return input;
+  // let buffer = Buffer.alloc(1024);
+  // let bytesRead = fs.readSync(0, buffer, 0, buffer.length, 0);
+  // let input = buffer.toString('latin1', 0, bytesRead).trim();
+
+  return prompt(message);
 
   // rl.question('Entrez un texte avec des accents : ', (answer) => {
   //   console.log(`Vous avez entré : ${answer}`);
@@ -37,7 +44,7 @@ const saisirNombre = (message = "") => {
     if (isNaN(output)) {
       afficher("Saisie incorrecte, veuillez recommencer svp");
     }
-  } while (isNaN(output))
+  } while (isNaN(output));
 
   return output;
 };
@@ -85,9 +92,8 @@ const saisirBooleen = (message = ""): boolean => {
 const valeurAleatoire = (minimum = 1, maximum = 10) =>
   Math.floor(
     Math.min(minimum, maximum) +
-    Math.random() *
-    (Math.max(minimum, maximum) - Math.min(minimum, maximum) + 1)
+      Math.random() *
+        (Math.max(minimum, maximum) - Math.min(minimum, maximum) + 1),
   );
 
 export { afficher, saisirBooleen, saisirNombre, saisirTexte, valeurAleatoire };
-
